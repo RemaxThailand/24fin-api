@@ -1,0 +1,26 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "24FIN API",
+  "main": "app.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RemaxThailand/24fin-api.git"
+  },
+  "keywords": [
+    "24FIN",
+    "Remax",
+    "API"
+  ],
+  "author": "Remax (Thailand)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RemaxThailand/24fin-api/issues"
+  },
+  "homepage": "https://github.com/RemaxThailand/24fin-api#readme"
+}
