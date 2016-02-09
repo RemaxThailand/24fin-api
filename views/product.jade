@@ -1,0 +1,346 @@
+extends layout
+
+block content
+	div.page-header
+		h2 #{title} 
+			small : ข้อมูลสินค้า
+
+	div#accordion.panel-group(role='tablist', aria-multiselectable='true')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseAllActiveProduct', aria-expanded='false')
+						strong All Active Product
+						&#58; ข้อมูลสินค้าทั้งหมดที่ยังขายอยู่
+			div#collapseAllActiveProduct.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /product/all
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-default authKey
+											|   รหัส Authentication
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseProductCategory', aria-expanded='false')
+						strong Category 
+						&#58; ข้อมูลหมวดหมู่สินค้า
+
+			div#collapseProductCategory.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /product/category
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Shop ID
+									div.col-sm-10
+										input.form-control.shop(type='text', placeholder='Shop ID')
+										p.help-block 
+											span.label.label-warning shop
+											|   รหัสร้านค้า
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseProductBrand', aria-expanded='false')
+						strong Brand 
+						&#58; ข้อมูลยี่ห้อสินค้า
+
+			div#collapseProductBrand.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /product/brand
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Shop ID
+									div.col-sm-10
+										input.form-control.shop(type='text', placeholder='Shop ID')
+										p.help-block 
+											span.label.label-warning shop
+											|   รหัสร้านค้า
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseProductGroupBrand', aria-expanded='false')
+						strong Category and Brand 
+						&#58; ข้อมูลหมวดหมู่สินค้า และยี่ห้อสินค้า
+
+			div#collapseProductGroupBrand.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /product/category_and_brand
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Shop ID
+									div.col-sm-10
+										input.form-control.shop(type='text', placeholder='Shop ID')
+										p.help-block 
+											span.label.label-warning shop
+											|   รหัสร้านค้า
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseProductSkuActive', aria-expanded='false')
+						strong Active SKU 
+						&#58; SKU ของสินค้าที่เปิดขายอยู่
+
+			div#collapseProductSkuActive.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /product/sku/active
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Shop ID
+									div.col-sm-10
+										input.form-control.shop(type='text', placeholder='Shop ID')
+										p.help-block 
+											span.label.label-warning shop
+											|   รหัสร้านค้า
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseImageUpdate', aria-expanded='false')
+						strong Update Image Data 
+						&#58; ปรับปรุงข้อมูลรูปภาพ
+			div#collapseImageUpdate.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /product/image/update
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Shop ID 
+									div.col-sm-10
+										input.form-control.shop(type='text', placeholder='Shop ID')
+										p.help-block 
+											span.label.label-warning shop
+											|   รหัสร้านค้า
+								div.form-group
+									label.col-sm-2.control-label(for='input') Product ID
+									div.col-sm-10
+										input.form-control.product(type='text', placeholder='Product ID')
+										p.help-block 
+											span.label.label-warning product
+											|   รหัสสินค้า
+								div.form-group
+									label.col-sm-2.control-label(for='input') Image Path
+									div.col-sm-10
+										input.form-control.path(type='text', placeholder='Image Path')
+										p.help-block 
+											span.label.label-warning path
+											|   ที่อยู่รูป
+								div.form-group
+									label.col-sm-2.control-label(for='input') Bytes
+									div.col-sm-10
+										input.form-control.bytes(type='text', placeholder='Bytes')
+										p.help-block 
+											span.label.label-warning bytes
+											|   ขนาดรูป (หน่วยเป็น bytes)
+								div.form-group
+									label.col-sm-2.control-label(for='input') Modified Date
+									div.col-sm-10
+										input.form-control.modified(type='text', placeholder='Modified Date')
+										p.help-block 
+											span.label.label-warning modified
+											|   วันที่แก้ไขรูปภาพ
+								div.form-group
+									label.col-sm-2.control-label(for='input') Modifier
+									div.col-sm-10
+										input.form-control.modifier(type='text', placeholder='Modifier')
+										p.help-block 
+											span.label.label-warning modifier
+											|   ชื่อผู้แก้ไขรูปภาพ
+								div.form-group
+									label.col-sm-2.control-label(for='input') System Name
+									div.col-sm-10
+										input.form-control.system(type='text', placeholder='System Name')
+										p.help-block 
+											span.label.label-warning system
+											|   ชื่อระบบที่ทำการส่งข้อมูลเข้าระบบ (ต้องได้รับอนุญาตจากระบบ)
+								div.form-group
+									label.col-sm-2.control-label(for='input') Mine Type
+									div.col-sm-10
+										input.form-control.mineType(type='text', placeholder='Mine Type')
+										p.help-block 
+											span.label.label-default mineType
+											|  ประเภทของไฟล์ เช่น image/jpeg
+								div.form-group
+									label.col-sm-2.control-label(for='input') Revision
+									div.col-sm-10
+										input.form-control.revision(type='text', placeholder='Revision')
+										p.help-block 
+											span.label.label-default revision
+											|   รหัส Version การปรับปรุงข้อมูล
+								div.form-group
+									label.col-sm-2.control-label(for='input') Image Type
+									div.col-sm-10
+										input.form-control.size(type='text', placeholder='Image Type')
+										p.help-block 
+											span.label.label-default size
+											|   ขนาดรูป (N : normal, S : small, M : medium, L : large)
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseProductImageList', aria-expanded='false')
+						strong Image List 
+						&#58; รูปภาพของสินค้า
+
+			div#collapseProductImageList.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /product/image/list
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Shop ID 
+									div.col-sm-10
+										input.form-control.shop(type='text', placeholder='Shop ID')
+										p.help-block 
+											span.label.label-warning shop
+											|   รหัสร้านค้า
+								div.form-group
+									label.col-sm-2.control-label(for='input') SKU
+									div.col-sm-10
+										input.form-control.sku(type='text', placeholder='SKU')
+										p.help-block 
+											span.label.label-warning sku
+											|   รหัส SKU ของสินค้า
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseProductImageListAll', aria-expanded='false')
+						strong Product Cover Image List (All Product)
+						&#58; รูปภาพหน้าปกของสินค้าทั้งหมด
+
+			div#collapseProductImageListAll.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /product/image/cover
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#searchProductByCategory', aria-expanded='false')
+						strong Search Product by Category URL
+						&#58; ค้นหาข้อมูลสินค้าในหมวดหมู่สินค้า ตาม URL
+
+			#searchProductByCategory.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /product/category/url
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Shop ID
+									div.col-sm-10
+										input.form-control.shop(type='text', placeholder='Shop ID')
+										p.help-block 
+											span.label.label-warning shop
+											|   รหัสร้านค้า
+								div.form-group
+									label.col-sm-2.control-label(for='input') URL
+									div.col-sm-10
+										input.form-control.url(type='text', placeholder='URL')
+										p.help-block 
+											span.label.label-warning url
+											|   URL ของหมวดหมู่สินค้า
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#productInfoById', aria-expanded='false')
+						strong Product Information by Id
+						&#58; ข้อมูลของสินค้า (ตามรหัสสินค้า)
+			#productInfoById.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /product/info/id
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Shop ID
+									div.col-sm-10
+										input.form-control.shop(type='text', placeholder='Shop ID')
+										p.help-block 
+											span.label.label-warning shop
+											|   รหัสร้านค้า
+								div.form-group
+									label.col-sm-2.control-label(for='input') Product ID
+									div.col-sm-10
+										input.form-control.id(type='text', placeholder='Product ID')
+										p.help-block 
+											span.label.label-warning id
+											|   รหัสสินค้า
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')

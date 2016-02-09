@@ -1,0 +1,119 @@
+extends layout
+
+block content
+	div.page-header
+		h2 #{title} 
+			small ข้อมูลร้านค้า
+
+	div#accordion.panel-group(role='tablist', aria-multiselectable='true')
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapse1', aria-expanded='false')
+						strong Add Configuration Data
+						&#58; เพิ่มข้อมูลการตั้งค่าต่างๆ ของร้านค้า
+			div#collapse1.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /shop/config/add/sd
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Shop ID
+									div.col-sm-10
+										input.form-control.shopId(type='text', placeholder='Shop')
+										p.help-block 
+											span.label.label-warning shopId
+											&nbsp;รหัสร้านค้า (ต้องมีในฐานข้อมูล)
+								div.form-group
+									label.col-sm-2.control-label(for='input') Configuration Key
+									div.col-sm-10
+										input.form-control.configKey(type='password', placeholder='Configuration Key')
+										p.help-block
+											span.label.label-warning configKey
+											&nbsp;ชื่อที่ใช้
+								div.form-group
+									label.col-sm-2.control-label(for='input') Configuration Value
+									div.col-sm-10
+										input.form-control.configValue(type='text', placeholder='Configuration Value')
+										p.help-block
+											span.label.label-warning configValue
+											&nbsp;ค่าของการตั้งค่า
+								div.form-group
+									label.col-sm-2.control-label(for='input') Configuration Type
+									div.col-sm-10
+										input.form-control.configType(type='text', placeholder='Configuration Type')
+										p.help-block 
+											span.label.label-default configType
+											&nbsp;ประเภทการตั้งค่า
+								div.form-group
+									label.col-sm-2.control-label(for='input') Member ID
+									div.col-sm-10
+										input.form-control.memberId(type='text', placeholder='Member ID')
+										p.help-block 
+											span.label.label-warning memberId
+											&nbsp;รหัสสมาชิกที่เพิ่มข้อมูล (ต้องมีสิทธิ์ในการเพิ่มข้อมูล)
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off', data-action='config-add') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+					
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseInfoBarcode', aria-expanded='false')
+						strong Get Product Barcode
+						&#58;  ข้อมูล ฺBarcode ของสินค้าที่สั่งซื้อ
+
+			div#collapseInfoBarcode.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /shop/info/barcode
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group
+									label.col-sm-2.control-label(for='input') Sell Number
+									div.col-sm-10
+										input.form-control.sellNo(type='text', placeholder='Sell Number')
+										p.help-block 
+											span.label.label-warning sellNo
+											|   เลขที่คำสั่งซื้อล่าสุด (Default = 0)
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+					
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#customerList', aria-expanded='false')
+						strong Shop's Customer
+						&#58;  ข้อมูลลูกค้า
+
+			div#customerList.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /shop/customer/list
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')

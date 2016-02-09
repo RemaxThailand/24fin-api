@@ -1,0 +1,98 @@
+extends layout
+
+block content
+	div.page-header
+		h2 #{title} 
+			small : จัดการข้อมูลระบบ
+
+	div#accordion.panel-group(role='tablist', aria-multiselectable='true')
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseDataScreen', aria-expanded='false')
+						strong System Screen 
+						&#58; ข้อมูลหน้าจอระบบ
+
+			div#collapseDataScreen.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /system/data/screen
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapeServerStatus', aria-expanded='false')
+						strong Update Server Status 
+						&#58; ตั้งค่าสถานะของ Server
+
+			div#collapeServerStatus.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /system/server/status
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Server Name
+									div.col-sm-10
+										input.form-control.server(type='text', placeholder='Server Name')
+										p.help-block 
+											span.label.label-warning server
+											|   ชื่อระบบ
+								div.form-group
+									label.col-sm-2.control-label(for='input') Server Port
+									div.col-sm-10
+										input.form-control.port(type='text', placeholder='Server Port')
+										p.help-block 
+											span.label.label-warning port
+											|   Port
+								div.form-group
+									label.col-sm-2.control-label(for='input') Status
+									div.col-sm-10
+										input.form-control.status(type='text', placeholder='Status')
+										p.help-block 
+											span.label.label-warning status
+											|   สถานะ (1 = online)
+								div.form-group
+									label.col-sm-2.control-label(for='input') Update By
+									div.col-sm-10
+										input.form-control.updateBy(type='text', placeholder='Update By')
+										p.help-block 
+											span.label.label-default updateBy
+											|   ชื่อผู้ Update ข้อมูล
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseDataScreenMapping', aria-expanded='false')
+						strong Screen Mapping 
+						&#58; สิทธิ์การใช้งานหน้าจอระบบ
+
+			div#collapseDataScreenMapping.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /system/data/screen_mapping
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Table Name
+									div.col-sm-10
+										input.form-control.system(type='text', placeholder='Table Name')
+										p.help-block 
+											span.label.label-warning system
+											|   ชื่อระบบ
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')

@@ -1,0 +1,1287 @@
+extends layout
+
+block content
+	div.page-header
+		h2 Member API 
+			small ข้อมูลสมาชิก
+
+	div#accordion.panel-group(role='tablist', aria-multiselectable='true')
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseOne', aria-expanded='false')
+						strong Username Exist 
+						&#58; ตรวจสอบว่ามี Username ในระบบหรือไม่
+			div#collapseOne.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/exist/username
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Username
+									div.col-sm-10
+										input.form-control.username(type='text', placeholder='Username')
+										p.help-block
+											span.label.label-warning username
+											|   ชื่อผู้ใช้
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseExistEmail', aria-expanded='false')
+						strong Email Exist 
+						&#58; ตรวจสอบว่ามีอีเมลในระบบหรือไม่
+			div#collapseExistEmail.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/exist/email
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Email
+									div.col-sm-10
+										input.form-control.email(type='text', placeholder='Email')
+										p.help-block 
+											span.label.label-warning email
+											|   อีเมล
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseExistMobile', aria-expanded='false')
+						strong Mobile Phone Exist 
+						&#58; ตรวจสอบว่ามีเบอร์มือถือในระบบหรือไม่
+			div#collapseExistMobile.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/exist/mobile
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Mobile Phone
+									div.col-sm-10
+										input.form-control.mobile(type='text', placeholder='เบอร์มือถือ')
+										p.help-block 
+											span.label.label-warning mobile
+											|   เบอร์มือถือ
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseExistLineID', aria-expanded='false')
+						strong Line ID Exist 
+						&#58; ตรวจสอบว่ามีไอดี Lineในระบบหรือไม่
+			div#collapseExistLineID.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/exist/lineId
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Line ID
+									div.col-sm-10
+										input.form-control.lineId(type='text', placeholder='ไอดี Line')
+										p.help-block 
+											span.label.label-default lineId
+											|   ไอดี Line
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseExistAuth', aria-expanded='false')
+						strong Authentication Key Exist 
+						&#58; ตรวจสอบว่ามีรหัส Authentication ในระบบหรือไม่
+			div#collapseExistAuth.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/exist/auth
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseMemberInfoAuth', aria-expanded='false')
+						strong Member Information (Authentication Mode) 
+						&#58; ข้อมูลทั่วไปของสมาชิก
+			div#collapseMemberInfoAuth.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/info/auth
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseMemberInfoRoles', aria-expanded='false')
+						strong Member Roles 
+						&#58; ข้อมูลสิทธิ์ของสมาชิกในการใช้งานระบบ
+			div#collapseMemberInfoRoles.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/info/roles
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseMemberScreenPermission', aria-expanded='false')
+						strong Member Screen Permission 
+						&#58; ข้อมูลสิทธิ์ของสมาชิกในการใช้งานหน้าจอ
+			div#collapseMemberScreenPermission.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/screen/permission
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group
+									label.col-sm-2.control-label(for='input') System Name
+									div.col-sm-10
+										input.form-control.system(type='text', placeholder='System Name')
+										p.help-block 
+											span.label.label-warning system
+											|   ชื่อระบบ เช่น backend
+								div.form-group
+									label.col-sm-2.control-label(for='input') Screen Path
+									div.col-sm-10
+										input.form-control.screen(type='text', placeholder='Screen Path')
+										p.help-block 
+											span.label.label-warning screen
+											|   ชื่อหน้าจอ เช่น /profile
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseLogout', aria-expanded='false')
+						strong Logout 
+						&#58; ออกจากระบบ
+			div#collapseLogout.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/logout
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+					
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapse-member-login', aria-expanded='false')
+						strong Member Login 
+						&#58; Login เข้าระบบ
+			div#collapse-member-login.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/login
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Username
+									div.col-sm-10
+										input.form-control.username(type='text', placeholder='Username')
+										p.help-block 
+											span.label.label-warning username
+											|   ชื่อผู้ใช้
+								div.form-group
+									label.col-sm-2.control-label(for='input') Password
+									div.col-sm-10
+										input.form-control.password(type='password', placeholder='Password')
+										p.help-block 
+											span.label.label-warning password
+											|   รหัสผ่าน
+								div.form-group
+									label.col-sm-2.control-label(for='input') Remember
+									div.col-sm-10
+										input.form-control.remember(type='password', placeholder='Remember')
+										p.help-block 
+											span.label.label-default remember
+											|   จำค่าการเข้าสู่ระบบไว้ (1 = จำ)
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+					
+
+
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseMemberRegister', aria-expanded='false')
+						strong Register 
+						&#58; สมัครสมาชิก
+
+			div#collapseMemberRegister.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/register
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Email
+									div.col-sm-10
+										input.form-control.email(type='text', placeholder='Email')
+										p.help-block 
+											span.label.label-warning email
+											|   อีเมล
+								div.form-group
+									label.col-sm-2.control-label(for='input') Username
+									div.col-sm-10
+										input.form-control.username(type='text', placeholder='Username')
+										p.help-block 
+											span.label.label-warning username
+											|   ชื่อผู้ใช้
+								div.form-group
+									label.col-sm-2.control-label(for='input') Password
+									div.col-sm-10
+										input.form-control.password(type='password', placeholder='Password')
+										p.help-block 
+											span.label.label-warning password
+											|   รหัสผ่าน
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseDeaerRegister', aria-expanded='false')
+						strong Dealer Register 
+						&#58; ดีลเลอร์
+
+			div#collapseDeaerRegister.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/dealer/register
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Name
+									div.col-sm-10
+										input.form-control.firstname(type='text', placeholder='ชื่อ')
+										p.help-block 
+											span.label.label-warning firstname
+											|   ชื่อ
+								div.form-group
+									label.col-sm-2.control-label(for='input') Lastname
+									div.col-sm-10
+										input.form-control.lastname(type='text', placeholder='นามสกุล')
+										p.help-block 
+											span.label.label-warning lastname
+											|   นามสกุล
+								div.form-group
+									label.col-sm-2.control-label(for='input') Email
+									div.col-sm-10
+										input.form-control.email(type='text', placeholder='อีเมล')
+										p.help-block 
+											span.label.label-warning email
+											|   อีเมล
+								div.form-group
+									label.col-sm-2.control-label(for='input') Mobile Phone
+									div.col-sm-10
+										input.form-control.mobile(type='text', placeholder='เบอร์มือถือ')
+										p.help-block 
+											span.label.label-warning mobile
+											|   เบอร์มือถือ
+								div.form-group
+									label.col-sm-2.control-label(for='input') Line ID
+									div.col-sm-10
+										input.form-control.lineId(type='text', placeholder='ไอดี Line')
+										p.help-block 
+											span.label.label-default lineId
+											|   ไอดี Line
+								div.form-group
+									label.col-sm-2.control-label(for='input') Province Code
+									div.col-sm-10
+										input.form-control.provinceCode(type='text', placeholder='Province Code')
+										p.help-block 
+											span.label.label-warning provinceCode
+											|   รหัสจังหวัด
+								div.form-group
+									label.col-sm-2.control-label(for='input') HTTP Referrers
+									div.col-sm-10
+										input.form-control.referer(type='text', placeholder='เว็บอ้างอิง')
+										p.help-block 
+											span.label.label-default referer
+											|   เว็บอ้างอิง
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseDeaerAddInfo', aria-expanded='false')
+						strong Dealer Add Information 
+						&#58; ข้อมูลเพิ่มเติมในการดีลเลอร์
+
+			div#collapseDeaerAddInfo.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/dealer/add_info
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Member ID
+									div.col-sm-10
+										input.form-control.id(type='text', placeholder='รหัส Dealer ที่ใช้สมัคร')
+										p.help-block 
+											span.label.label-warning id
+											|   รหัส Dealer ที่ใช้สมัคร
+								div.form-group
+									label.col-sm-2.control-label(for='input') Username
+									div.col-sm-10
+										input.form-control.username(type='text', placeholder='Username')
+										p.help-block 
+											span.label.label-warning username
+											|   ชื่อผู้ใช้
+								div.form-group
+									label.col-sm-2.control-label(for='input') Password
+									div.col-sm-10
+										input.form-control.password(type='text', placeholder='Password')
+										p.help-block 
+											span.label.label-warning password
+											|   รหัสผ่าน
+								div.form-group
+									label.col-sm-2.control-label(for='input') Shop Name
+									div.col-sm-10
+										input.form-control.shopName(type='text', placeholder='Shop Name')
+										p.help-block 
+											span.label.label-default shopName
+											|   ชื่อร้าน
+								div.form-group
+									label.col-sm-2.control-label(for='input') Address
+									div.col-sm-10
+										input.form-control.address(type='text', placeholder='Address')
+										p.help-block 
+											span.label.label-warning address
+											|   ที่อยู่
+								div.form-group
+									label.col-sm-2.control-label(for='input') Address (additional)
+									div.col-sm-10
+										input.form-control.address2(type='text', placeholder='Address')
+										p.help-block 
+											span.label.label-default address2
+											|   ที่อยู่ (ต่อ)
+								div.form-group
+									label.col-sm-2.control-label(for='input') Sub District
+									div.col-sm-10
+										input.form-control.subDistrict(type='text', placeholder='Sub District')
+										p.help-block 
+											span.label.label-warning subDistrict
+											|   แขวง/ตำบล
+								div.form-group
+									label.col-sm-2.control-label(for='input') District Code
+									div.col-sm-10
+										input.form-control.districtCode(type='text', placeholder='District Code')
+										p.help-block 
+											span.label.label-warning districtCode
+											|   รหัสเขต/อำเภอ
+								div.form-group
+									label.col-sm-2.control-label(for='input') Province Code
+									div.col-sm-10
+										input.form-control.provinceCode(type='text', placeholder='Province Code')
+										p.help-block 
+											span.label.label-warning provinceCode
+											|   รหัสจังหวัด
+								div.form-group
+									label.col-sm-2.control-label(for='input') Zipcode
+									div.col-sm-10
+										input.form-control.zipcode(type='text', placeholder='Zipcode')
+										p.help-block 
+											span.label.label-warning zipcode
+											|   รหัสไปรษณีย์
+								div.form-group
+									label.col-sm-2.control-label(for='input') Question 1
+									div.col-sm-10
+										input.form-control.question1(type='text', placeholder='Question 1')
+										p.help-block 
+											span.label.label-warning question1
+											|   คุณเคยทำธุรกิจ Accessories หรือไม่ (1 = เคย, 0 = ไม่เคย)
+								div.form-group
+									label.col-sm-2.control-label(for='input') Question 2
+									div.col-sm-10
+										input.form-control.question2(type='text', placeholder='Question 2')
+										p.help-block 
+											span.label.label-warning question2
+											|   ประเภทธุรกิจ (ws = ขายส่ง, rt = ขายปลีก, ol = ขายปลีก) คั่นข้อมูลด้วยเครื่องหมาย ,
+								div.form-group
+									label.col-sm-2.control-label(for='input') Question 3
+									div.col-sm-10
+										input.form-control.question3(type='text', placeholder='Question 3')
+										p.help-block 
+											span.label.label-warning question3
+											|   คุณต้องการรับทราบข่าวสารผ่านทางวิธีใด (ln = Line, em = อีเมล, fb = Facebook) คั่นข้อมูลด้วยเครื่องหมาย ,
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseDeaerRegisInfo', aria-expanded='false')
+						strong Dealer Register Information
+						&#58; ข้อมูลการสมัครดีลเลอร์
+
+			div#collapseDeaerRegisInfo.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/dealer/register_info
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Shop ID
+									div.col-sm-10
+										input.form-control.shop(type='text', placeholder='Shop ID')
+										p.help-block 
+											span.label.label-warning shop
+											|   รหัสร้านค้า
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseDeaerAddInfoSendEmail', aria-expanded='false')
+						strong Send Email for Approve Dealer
+						&#58; ส่งอีเมล์เพื่ออนุมัติการดีลเลอร์
+
+			div#collapseDeaerAddInfoSendEmail.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/dealer/approve_email
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Member ID
+									div.col-sm-10
+										input.form-control.memberId(type='text', placeholder='Member ID')
+										p.help-block 
+											span.label.label-warning memberId
+											|   รหัสสมาชิก
+								div.form-group
+									label.col-sm-2.control-label(for='input') Image List
+									div.col-sm-10
+										input.form-control.imageList(type='text', placeholder='Image List')
+										p.help-block 
+											span.label.label-default imageList
+											|   ที่อยู่รูปภาพ (เช่น http://img.dmain.com/01.jpg, http://img.dmain.com/02.jpg)
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseInfoUpdate', aria-expanded='false')
+						strong Update Member Information 
+						&#58; แก้ไขข้อมูลส่วนตัว
+			div#collapseInfoUpdate.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/info/update
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group
+									label.col-sm-2.control-label(for='input') Table
+									div.col-sm-10
+										input.form-control.table(type='text', placeholder='Table')
+										p.help-block
+											span.label.label-warning table
+											|   ตารางในฐานข้อมูล
+								div.form-group
+									label.col-sm-2.control-label(for='input') Key
+									div.col-sm-10
+										input.form-control.key(type='text', placeholder='Key')
+										p.help-block
+											span.label.label-warning key
+											|   คอลัมน์ของข้อมูล
+								div.form-group
+									label.col-sm-2.control-label(for='input') Value
+									div.col-sm-10
+										input.form-control.value(type='text', placeholder='Value')
+										p.help-block
+											span.label.label-warning value
+											|   ค่าของข้อมูล
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseScreen', aria-expanded='false')
+						strong Member Role Screen 
+						&#58; หน้าจอระบบที่สามารถใช้งานได้ แยกตามกลุ่มสมาชิก
+			div#collapseScreen.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/screen
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') System Name
+									div.col-sm-10
+										input.form-control.system(type='text', placeholder='System Name')
+										p.help-block 
+											span.label.label-warning system
+											|   ชื่อระบบ เช่น backend
+								div.form-group
+									label.col-sm-2.control-label(for='input') Member Type
+									div.col-sm-10
+										input.form-control.memberType(type='text', placeholder=' Member Type')
+										p.help-block
+											span.label.label-warning memberType
+											|   ชื่อกลุ่มสมาชิก เช่น member
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseMemberTeamwork', aria-expanded='false')
+						strong Teamwork 
+						&#58; ข้อมูลทีมงาน
+			div#collapseMemberTeamwork.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/teamwork
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseMemberTeamworkMapping', aria-expanded='false')
+						strong Teamwork Mapping 
+						&#58; เพิ่มข้อมูลทีมงาน
+			div#collapseMemberTeamworkMapping.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/teamwork/mapping
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group
+									label.col-sm-2.control-label(for='input') Secret Code
+									div.col-sm-10
+										input.form-control.secretCode(type='text', placeholder='Secret Code')
+										p.help-block 
+											span.label.label-warning secretCode
+											|   Secret Code
+								div.form-group
+									label.col-sm-2.control-label(for='input') Member Type
+									div.col-sm-10
+										input.form-control.memberType(type='text', placeholder='Member Type')
+										p.help-block 
+											span.label.label-warning memberType
+											|   ประเภทสมาชิก
+								div.form-group
+									label.col-sm-2.control-label(for='input') Insert Key
+									div.col-sm-10
+										input.form-control.insertKey(type='text', placeholder='Insert Key')
+										p.help-block 
+											span.label.label-warning insertKey
+											|   รหัสที่ใช้ในการเพิ่มข้อมูล
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseMemberTeamworkSignin', aria-expanded='false')
+						strong Teamwork Signin 
+						&#58; เข้าระบบเพื่อจัดการข้อมูลต่างๆ
+			div#collapseMemberTeamworkSignin.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/teamwork/signin
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group
+									label.col-sm-2.control-label(for='input') Member ID
+									div.col-sm-10
+										input.form-control.memberId(type='text', placeholder='Member ID')
+										p.help-block 
+											span.label.label-warning memberId
+											|   รหัสสมาชิก
+								div.form-group
+									label.col-sm-2.control-label(for='input') Member Type
+									div.col-sm-10
+										input.form-control.memberType(type='text', placeholder='Member Type')
+										p.help-block
+											span.label.label-warning memberType
+											|   ชื่อกลุ่มสมาชิก เช่น member
+								div.form-group
+									label.col-sm-2.control-label(for='input') Update Key
+									div.col-sm-10
+										input.form-control.updateKey(type='text', placeholder='Update Key')
+										p.help-block 
+											span.label.label-warning updateKey
+											|   รหัสที่ใช้ในการแก้ไขข้อมูล
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseMemberTeamworkData', aria-expanded='false')
+						strong Teamwork Data 
+						&#58; ข้อมูลที่อยู่ของสมาชิก
+			div#collapseMemberTeamworkData.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/teamwork/data
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseMemberCommissionSummaryData', aria-expanded='false')
+						strong Commission Summary Data 
+						&#58; ข้อมูลค่าคอมมิชชั่น
+			div#collapseMemberCommissionSummaryData.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/commission/summary
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseMemberCommissionDetailData', aria-expanded='false')
+						strong Commission Detail Data 
+						&#58; ข้อมูลรายละเอียดค่าคอมมิชชั่น
+			div#collapseMemberCommissionDetailData.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/commission/detail
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group
+									label.col-sm-2.control-label(for='input') Order Number
+									div.col-sm-10
+										input.form-control.orderNo(type='text', placeholder='Order Number')
+										p.help-block 
+											span.label.label-warning orderNo
+											|   เลขที่คำสั่งซื้อ
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseMemberUpdateSalePrice', aria-expanded='false')
+						strong Update Sale Price
+						&#58; แก้ไขข้อมูลราคาขายสินค้า
+			div#collapseMemberUpdateSalePrice.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/sale_price/update
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group
+									label.col-sm-2.control-label(for='input') Member ID
+									div.col-sm-10
+										input.form-control.memberId(type='text', placeholder='Member ID')
+										p.help-block 
+											span.label.label-warning memberId
+											|   รหัสสมาชิก
+								div.form-group
+									label.col-sm-2.control-label(for='input') Sale Price Channel
+									div.col-sm-10
+										input.form-control.salePrice(type='text', placeholder='Sale Price Channel')
+										p.help-block 
+											span.label.label-warning salePrice
+											|   ช่องราคา
+								div.form-group
+									label.col-sm-2.control-label(for='input') Percent Discount
+									div.col-sm-10
+										input.form-control.discount(type='text', placeholder='Percent Discount')
+										p.help-block 
+											span.label.label-warning discount
+											|   ส่วนลด (%)
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseMemberScreenUpdateConfig', aria-expanded='false')
+						strong Update Member Screen Configuration 
+						&#58; บันทึกข้อมูลการตั้งค่าหน้าจอของสมาชิก
+			div#collapseMemberScreenUpdateConfig.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/screen/config/update
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group
+									label.col-sm-2.control-label(for='input') System
+									div.col-sm-10
+										input.form-control.system(type='text', placeholder='System')
+										p.help-block 
+											span.label.label-warning system
+											|   ชื่อระบบ (ต้องมีชื่อที่ได้รับอนุญาตในระบบ)
+								div.form-group
+									label.col-sm-2.control-label(for='input') Screen Name
+									div.col-sm-10
+										input.form-control.screen(type='text', placeholder='Screen Name')
+										p.help-block 
+											span.label.label-warning screen
+											|   ชื่อหน้าจอ (ต้องมีข้อมูลในระบบ)
+								div.form-group
+									label.col-sm-2.control-label(for='input') Configuration Data
+									div.col-sm-10
+										input.form-control.config(type='text', placeholder='Configuration Data')
+										p.help-block 
+											span.label.label-warning config
+											|   ข้อมูลต่างๆ ที่จะบันทึก (JSON Format)
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseMemberScreenDataConfig', aria-expanded='false')
+						strong Member Screen Configuration Data 
+						&#58; ข้อมูลการตั้งค่าหน้าจอของสมาชิก
+			div#collapseMemberScreenDataConfig.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/screen/config/data
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group
+									label.col-sm-2.control-label(for='input') System
+									div.col-sm-10
+										input.form-control.system(type='text', placeholder='System')
+										p.help-block 
+											span.label.label-warning system
+											|   ชื่อระบบ (ต้องมีชื่อที่ได้รับอนุญาตในระบบ)
+								div.form-group
+									label.col-sm-2.control-label(for='input') Screen Name
+									div.col-sm-10
+										input.form-control.screen(type='text', placeholder='Screen Name')
+										p.help-block 
+											span.label.label-warning screen
+											|   ชื่อหน้าจอ (ต้องมีข้อมูลในระบบ)
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseMemberSummaryAlert', aria-expanded='false')
+						strong Summary Alert 
+						&#58; สรุปตัวเลขการแจ้งเตือนของหน้าจอ
+			div#collapseMemberSummaryAlert.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/summary/alert
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group
+									label.col-sm-2.control-label(for='input') Screen Name
+									div.col-sm-10
+										input.form-control.screen(type='text', placeholder='Screen Name')
+										p.help-block 
+											span.label.label-warning screen
+											|   ชื่อหน้าจอ (ต้องมีข้อมูลในระบบ)
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseMemberAddressAdd', aria-expanded='false')
+						strong Add Address  
+						&#58; เพิ่มข้อมูลที่อยู่ของสมาชิก
+			div#collapseMemberAddressAdd.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/address/add
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group
+									label.col-sm-2.control-label(for='input') Firstname
+									div.col-sm-10
+										input.form-control.firstname(type='text', placeholder='Firstname')
+										p.help-block 
+											span.label.label-warning firstname
+											|   ชื่อ
+								div.form-group
+									label.col-sm-2.control-label(for='input') Lastname
+									div.col-sm-10
+										input.form-control.lastname(type='text', placeholder='Lastname')
+										p.help-block 
+											span.label.label-warning lastname
+											|   นามสกุล
+								div.form-group
+									label.col-sm-2.control-label(for='input') Contact Name
+									div.col-sm-10
+										input.form-control.contactName(type='text', placeholder='Contact Name')
+										p.help-block 
+											span.label.label-default contactName
+											|   ชื่อผู้ติดต่อ
+								div.form-group
+									label.col-sm-2.control-label(for='input') Mobile Phone
+									div.col-sm-10
+										input.form-control.mobilePhone(type='text', placeholder='Mobile Phone')
+										p.help-block 
+											span.label.label-warning mobilePhone
+											|   โทรศัพท์
+								div.form-group
+									label.col-sm-2.control-label(for='input') Shop Name
+									div.col-sm-10
+										input.form-control.shopName(type='text', placeholder='Shop Name')
+										p.help-block 
+											span.label.label-default shopName
+											|   ชื่อร้าน
+								div.form-group
+									label.col-sm-2.control-label(for='input') Address
+									div.col-sm-10
+										input.form-control.address(type='text', placeholder='Address')
+										p.help-block 
+											span.label.label-warning address
+											|   ที่อยู่
+								div.form-group
+									label.col-sm-2.control-label(for='input') Address (additional)
+									div.col-sm-10
+										input.form-control.address2(type='text', placeholder='Address')
+										p.help-block 
+											span.label.label-default address2
+											|   ที่อยู่ (ต่อ)
+								div.form-group
+									label.col-sm-2.control-label(for='input') Sub District
+									div.col-sm-10
+										input.form-control.subDistrict(type='text', placeholder='Sub District')
+										p.help-block 
+											span.label.label-warning subDistrict
+											|   แขวง/ตำบล
+								div.form-group
+									label.col-sm-2.control-label(for='input') District Code
+									div.col-sm-10
+										input.form-control.districtCode(type='text', placeholder='District Code')
+										p.help-block 
+											span.label.label-warning districtCode
+											|   รหัสเขต/อำเภอ
+								div.form-group
+									label.col-sm-2.control-label(for='input') Province Code
+									div.col-sm-10
+										input.form-control.provinceCode(type='text', placeholder='Province Code')
+										p.help-block 
+											span.label.label-warning provinceCode
+											|   รหัสจังหวัด
+								div.form-group
+									label.col-sm-2.control-label(for='input') Zipcode
+									div.col-sm-10
+										input.form-control.zipcode(type='text', placeholder='Zipcode')
+										p.help-block 
+											span.label.label-warning zipcode
+											|   รหัสไปรษณีย์
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseMemberAddressData', aria-expanded='false')
+						strong Address Data 
+						&#58; ข้อมูลที่อยู่ของสมาชิก
+			div#collapseMemberAddressData.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/address/data
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseChangePassword', aria-expanded='false')
+						strong Change Password 
+						&#58; เปลี่ยนรหัสผ่าน
+			div#collapseChangePassword.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/change_password
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group
+									label.col-sm-2.control-label(for='input') Username
+									div.col-sm-10
+										input.form-control.username(type='text', placeholder='Username')
+										p.help-block 
+											span.label.label-warning username
+											|   ชื่อผู้ใช้
+								div.form-group
+									label.col-sm-2.control-label(for='input') Current Password
+									div.col-sm-10
+										input.form-control.currentPassword(type='text', placeholder='Current Password')
+										p.help-block 
+											span.label.label-warning currentPassword
+											|   รหัสผ่านปัจจุบัน
+								div.form-group
+									label.col-sm-2.control-label(for='input') New Password
+									div.col-sm-10
+										input.form-control.newPassword(type='text', placeholder='New Password')
+										p.help-block 
+											span.label.label-warning newPassword
+											|   รหัสผ่านใหม่
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseWeeklyRegister', aria-expanded='false')
+						strong Statistic of Weekly Register
+						&#58; สถิติการสมัครสมาชิกรายสัปดาห์
+			div#collapseWeeklyRegister.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/statistic/weekly_register
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Shop ID
+									div.col-sm-10
+										input.form-control.shop(type='text', placeholder='Shop ID')
+										p.help-block 
+											span.label.label-warning shop
+											|   รหัสร้านค้า
+								div.form-group
+									label.col-sm-2.control-label(for='input') Member Type
+									div.col-sm-10
+										input.form-control.memberType(type='text', placeholder='Member Type')
+										p.help-block 
+											span.label.label-warning memberType
+											|   ประเภทสมาชิก เช่น member
+								div.form-group
+									label.col-sm-2.control-label(for='input') Week Count
+									div.col-sm-10
+										input.form-control.week(type='text', placeholder='Week Count')
+										p.help-block 
+											span.label.label-warning week
+											|   จำนวนสัปดาห์
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseMonthlyOrder', aria-expanded='false')
+						strong Statistic of Monthly Order
+						&#58; สถิติการสั่งซื้อสินค้ารายเดือน
+			div#collapseMonthlyOrder.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/statistic/monthly_order
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Shop ID
+									div.col-sm-10
+										input.form-control.shop(type='text', placeholder='Shop ID')
+										p.help-block 
+											span.label.label-warning shop
+											|   รหัสร้านค้า
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#MemberPoint', aria-expanded='false')
+						strong Member Point 
+						&#58; ตรวจสอบคะแนนสะสม
+			div#MemberPoint.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/point/history
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Search Query
+									div.col-sm-10
+										input.form-control.query(type='text', placeholder='เบอร์มือถือ/รหัสสมาชิก/รหัสบัตรสมาชิก')
+										p.help-block 
+											span.label.label-warning query
+											|   เบอร์มือถือ/รหัสสมาชิก/รหัสบัตรสมาชิก
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseMemberInfoAuth', aria-expanded='false')
+						strong Member Information (Search by Member ID) 
+						&#58; ข้อมูลทั่วไปของสมาชิก
+			div#collapseMemberInfoAuth.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /member/info/detail
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')

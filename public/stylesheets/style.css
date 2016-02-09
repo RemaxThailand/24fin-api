@@ -1,0 +1,7 @@
+body { padding-top: 40px; padding-bottom: 30px }
+
+.margin-bottom-0 { margin-bottom:0 }
+.margin-top-10 { margin-top:10px }
+
+.font-pre { font-family: Menlo,Monaco,Consolas,"Courier New",monospace !important; font-size: 0.85em; }
+.help-block .label {position:relative; top:-1px !important }

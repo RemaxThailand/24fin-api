@@ -1,0 +1,359 @@
+extends layout
+
+block content
+	div.page-header
+		h2 #{title} 
+			small : คำสั่งซื้อสินค้า
+
+	div#accordion.panel-group(role='tablist', aria-multiselectable='true')
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseCartUpdate', aria-expanded='false')
+						strong Add Product to Shopping Cart 
+						&#58; เพิ่มสินค้าลงในรถเข็น
+			div#collapseCartUpdate.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /order/cart/update
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group
+									label.col-sm-2.control-label(for='input') Product Code
+									div.col-sm-10
+										input.form-control.productCode(type='text', placeholder='Product Code')
+										p.help-block 
+											span.label.label-warning productCode
+											|   รหัสสินค้า
+								div.form-group
+									label.col-sm-2.control-label(for='input') Quantity
+									div.col-sm-10
+										input.form-control.qty(type='text', placeholder='Quantity')
+										p.help-block 
+											span.label.label-warning qty
+											|   จำนวน
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseCartDetail', aria-expanded='false')
+						strong Shopping Cart Summary 
+						&#58; รายละเอียดข้อมูลสินค้าในรถเข็น
+			div#collapseCartDetail.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /order/cart/detail
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseCartSummary', aria-expanded='false')
+						strong Shopping Cart Summary 
+						&#58; สรุปข้อมูลสินค้าในรถเข็น
+			div#collapseCartSummary.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /order/cart/summary
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseOrderUpdate', aria-expanded='false')
+						strong Update Shopping Cart 
+						&#58; แก้ไขจำนวนสินค้าลงในรถเข็น
+			div#collapseOrderUpdate.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /order/update
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group
+									label.col-sm-2.control-label(for='input') Product Code
+									div.col-sm-10
+										input.form-control.productCode(type='text', placeholder='Product Code')
+										p.help-block 
+											span.label.label-warning productCode
+											|   รหัสสินค้า
+								div.form-group
+									label.col-sm-2.control-label(for='input') Quantity
+									div.col-sm-10
+										input.form-control.qty(type='text', placeholder='Quantity')
+										p.help-block 
+											span.label.label-warning qty
+											|   จำนวน
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+					
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapse1', aria-expanded='false')
+						strong Confirm Order 
+						&#58;  ยืนยันคำสั่งซื้อ
+
+			div#collapse1.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /order/confirm
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group
+									label.col-sm-2.control-label(for='input') Coupon Code
+									div.col-sm-10
+										input.form-control.coupon(type='text', placeholder='Coupon Code')
+										p.help-block 
+											span.label.label-default coupon
+											|   รหัสคูปอง
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapse1', aria-expanded='false')
+						strong Send Email for Confirm Order 
+						&#58; ส่ง Email ยืนยันคำสั่งซื้อ
+
+			div#collapse1.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /order/sendmail/confirm
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Order Number
+									div.col-sm-10
+										input.form-control.orderNo(type='text', placeholder='Order Number')
+										p.help-block 
+											span.label.label-warning orderNo
+											&nbsp;หมายเลขคำสั่งซื้อ
+								div.form-group
+									label.col-sm-2.control-label(for='input') Product Items
+									div.col-sm-10
+										input.form-control.items(type='text', placeholder='Product Items')
+										p.help-block 
+											span.label.label-warning items
+											&nbsp;จำนวนรายการ
+								div.form-group
+									label.col-sm-2.control-label(for='input') Product Quantity
+									div.col-sm-10
+										input.form-control.qty(type='text', placeholder='Product Quantity')
+										p.help-block 
+											span.label.label-warning qty
+											&nbsp;จำนวนชิ้น
+								div.form-group
+									label.col-sm-2.control-label(for='input') Total Price
+									div.col-sm-10
+										input.form-control.price(type='text', placeholder='Total Price')
+										p.help-block 
+											span.label.label-warning price
+											&nbsp;ราคา
+								div.form-group
+									label.col-sm-2.control-label(for='input') Customer Name
+									div.col-sm-10
+										input.form-control.name(type='text', placeholder='Customer Name')
+										p.help-block 
+											span.label.label-warning name
+											&nbsp;ชื่อลูกค้า
+								div.form-group
+									label.col-sm-2.control-label(for='input') Customer Nickname
+									div.col-sm-10
+										input.form-control.nickname(type='text', placeholder='Customer Nickname')
+										p.help-block 
+											span.label.label-warning nickname
+											&nbsp;ชื่อเล่นลูกค้า
+								div.form-group
+									label.col-sm-2.control-label(for='input') Shop Name
+									div.col-sm-10
+										input.form-control.shopName(type='text', placeholder='Shop Name')
+										p.help-block 
+											span.label.label-warning shopName
+											&nbsp;ชื่อร้าน
+								div.form-group
+									label.col-sm-2.control-label(for='input') Telephone Number
+									div.col-sm-10
+										input.form-control.telephoneNo(type='text', placeholder='Telephone Number')
+										p.help-block 
+											span.label.label-warning telephoneNo
+											&nbsp;เบอร์โทรศัพท์
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+					
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseCouponInfo', aria-expanded='false')
+						strong Coupon Information
+						&#58;  ตรวจสอบข้อมูลคูปองส่วนลด
+
+			div#collapseCouponInfo.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /order/coupon/info
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group
+									label.col-sm-2.control-label(for='input') Coupon Code
+									div.col-sm-10
+										input.form-control.couponCode(type='text', placeholder='Coupon Code')
+										p.help-block 
+											span.label.label-warning couponCode
+											|   รหัสคูปอง
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+					
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseOrderSummaryByMonth', aria-expanded='false')
+						strong Order Summary by Month
+						&#58;  รายการสั่งซื้อรายเดือน
+
+			div#collapseOrderSummaryByMonth.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /order/summary/month
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key 
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication 
+								div.form-group
+									label.col-sm-2.control-label(for='input') Year 
+									div.col-sm-10
+										input.form-control.year(type='text', placeholder='Year')
+										p.help-block 
+											span.label.label-warning year
+											|   ปี (ค.ศ.) 
+								div.form-group
+									label.col-sm-2.control-label(for='input') Month 
+									div.col-sm-10
+										input.form-control.month(type='text', placeholder='Month')
+										p.help-block 
+											span.label.label-warning month
+											|   เดือน 
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+					
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#trackingUpdate', aria-expanded='false')
+						strong Update Shipping Tracking Number     
+						&#58;  จัดการข้อมูลหมายเลขสถานะการขนส่ง
+			#trackingUpdate.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /order/tracking/update
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Order Number
+									div.col-sm-10
+										input.form-control.orderNo(type='text', placeholder='Order Number')
+										p.help-block 
+											span.label.label-warning orderNo
+											|   หมายเลขคำสั่งซื้อ 
+								div.form-group
+									label.col-sm-2.control-label(for='input') Shipping Type 
+									div.col-sm-10
+										input.form-control.type(type='text', placeholder='Shipping Type ')
+										p.help-block 
+											span.label.label-warning type
+											|   ประเภทการขนส่ง
+								div.form-group
+									label.col-sm-2.control-label(for='input') Tracking Number 
+									div.col-sm-10
+										input.form-control.trackingNo(type='text', placeholder='Tracking Number')
+										p.help-block 
+											span.label.label-warning trackingNo
+											|   หมายเลขพัสดุ 
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')

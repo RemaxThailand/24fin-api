@@ -1,0 +1,394 @@
+extends layout
+
+block content
+	div.page-header
+		h2 #{title} 
+			small : การทำงานอื่นๆ ที่เป็นประโยชน์
+
+	div#accordion.panel-group(role='tablist', aria-multiselectable='true')
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapse1', aria-expanded='false')
+						strong Telnet 
+						&#58; ตรวจสอบสถานะของ Server
+
+			div#collapse1.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /utilities/telnet
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Server
+									div.col-sm-10
+										input.form-control.server(type='text', placeholder='Server')
+										p.help-block 
+											span.label.label-warning server
+											|   Server ที่ต้องการติดต่อ
+								div.form-group
+									label.col-sm-2.control-label(for='input') Port
+									div.col-sm-10
+										input.form-control.port(type='text', placeholder='Port')
+										p.help-block
+											span.label.label-warning port
+											|   Port ที่ใช้
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+					
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapse2', aria-expanded='false')
+						strong Sendmail 
+						&#58; ส่ง Email
+
+			div#collapse2.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /utilities/sendmail
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') To
+									div.col-sm-10
+										input.form-control.to(type='text', placeholder='To')
+										p.help-block 
+											span.label.label-warning to
+											|   Email ผู้ที่ต้องการติดต่อ
+								div.form-group
+									label.col-sm-2.control-label(for='input') Sender Name
+									div.col-sm-10
+										input.form-control.senderName(type='text', placeholder='Sender Name')
+										p.help-block 
+											span.label.label-default senderName
+											|   ชื่อผู้ส่ง Email (default : #{config.gmail.senderName})
+								div.form-group
+									label.col-sm-2.control-label(for='input') Sender Email
+									div.col-sm-10
+										input.form-control.senderEmail(type='text', placeholder='Sender Email')
+										p.help-block 
+											span.label.label-default senderEmail
+											|   Email ผู้ส่ง (default : #{config.gmail.senderEmail})
+								div.form-group
+									label.col-sm-2.control-label(for='input') Subject
+									div.col-sm-10
+										input.form-control.subject(type='text', placeholder='Subject')
+										p.help-block
+											span.label.label-warning subject
+											|   หัวข้อ
+								div.form-group
+									label.col-sm-2.control-label(for='input') Message
+									div.col-sm-10
+										input.form-control.message(type='text', placeholder='Message')
+										p.help-block
+											span.label.label-warning message
+											|   ข้อความ
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+					
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapse3', aria-expanded='false')
+						strong Email Verify 
+						&#58; ตรวจสอบ Email
+
+			div#collapse3.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /utilities/email/verify
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Email
+									div.col-sm-10
+										input.form-control.email(type='text', placeholder='Email')
+										p.help-block 
+											span.label.label-warning email
+											|   Email ผู้ที่ต้องการตรวจสอบ
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseDataInsert', aria-expanded='false')
+						strong Insert Data 
+						&#58; เพิ่มข้อมูลในตาราง
+			div#collapseDataInsert.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /utilities/data/insert
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group
+									label.col-sm-2.control-label(for='input') Table Name
+									div.col-sm-10
+										input.form-control.table(type='text', placeholder='Table Name')
+										p.help-block 
+											span.label.label-warning table
+											|   ชื่อตาราง
+								div.form-group
+									label.col-sm-2.control-label(for='input') Data
+									div.col-sm-10
+										input.form-control.data(type='text', placeholder='Data')
+										p.help-block 
+											span.label.label-warning data
+											|   ข้อมูล JSON เช่น {id: '1234', name: 'test'}
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseDataUpdate', aria-expanded='false')
+						strong Update Data 
+						&#58; แก้ไขข้อมูลในตาราง
+			div#collapseDataUpdate.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /utilities/data/update
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group
+									label.col-sm-2.control-label(for='input') Table Name
+									div.col-sm-10
+										input.form-control.table(type='text', placeholder='Table Name')
+										p.help-block 
+											span.label.label-warning table
+											|   ชื่อตาราง
+								div.form-group
+									label.col-sm-2.control-label(for='input') Column Name
+									div.col-sm-10
+										input.form-control.column(type='text', placeholder='Column Name')
+										p.help-block 
+											span.label.label-warning column
+											|   ชื่อคอลัมน์
+								div.form-group
+									label.col-sm-2.control-label(for='input') Value
+									div.col-sm-10
+										input.form-control.value(type='text', placeholder='Value')
+										p.help-block 
+											span.label.label-default value
+											|   ค่าของข้อมูล (ถ้าไม่กรอกข้อมูลมา จะมีค่า = NULL)
+								div.form-group
+									label.col-sm-2.control-label(for='input') Where
+									div.col-sm-10
+										input.form-control.where(type='text', placeholder='Where')
+										p.help-block 
+											span.label.label-warning where
+											|   เงื่อนไข เช่น id = ''1234''
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseDataInsert', aria-expanded='false')
+						strong Delete Data 
+						&#58; ลบข้อมูลในตาราง
+			div#collapseDataInsert.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /utilities/data/delete
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Authentication Key
+									div.col-sm-10
+										input.form-control.authKey(type='text', placeholder='Authentication Key')
+										p.help-block 
+											span.label.label-warning authKey
+											|   รหัส Authentication
+								div.form-group
+									label.col-sm-2.control-label(for='input') Table Name
+									div.col-sm-10
+										input.form-control.table(type='text', placeholder='Table Name')
+										p.help-block 
+											span.label.label-warning table
+											|   ชื่อตาราง
+								div.form-group
+									label.col-sm-2.control-label(for='input') WHERE clause
+									div.col-sm-10
+										input.form-control.where(type='text', placeholder='WHERE clause')
+										p.help-block 
+											span.label.label-warning where
+											|   ข้อมูล JSON เช่น {id: '1234', name: 'test'}
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseDropboxShare', aria-expanded='false')
+						strong Get Dropbox Share URL 
+						&#58; แชร์ไฟล์ใน Dropbox
+			div#collapseDropboxShare.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /utilities/dropbox/share
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') File Path
+									div.col-sm-10
+										input.form-control.path(type='text', placeholder='File Path')
+										p.help-block 
+											span.label.label-warning path
+											|   ที่อยู่ไฟล์รูป
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseDropboxSearch', aria-expanded='false')
+						strong Search Files in Dropbox Folder 
+						&#58; ค้นหาไฟล์ใน Dropbox
+			div#collapseDropboxSearch.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /utilities/dropbox/search
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') File Path
+									div.col-sm-10
+										input.form-control.path(type='text', placeholder='File Path')
+										p.help-block 
+											span.label.label-warning path
+											|   ที่อยู่ไฟล์
+								div.form-group
+									label.col-sm-2.control-label(for='input') Search Query
+									div.col-sm-10
+										input.form-control.query(type='text', placeholder='Search Query')
+										p.help-block 
+											span.label.label-warning query
+											|   คำที่ต้องการค้นหา
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseDropboxSyncImage', aria-expanded='false')
+						strong Synchronize Image Files in Dropbox Folder 
+						&#58; ตรวจสอบการแก้ไขภาพใน Dropbox
+			div#collapseDropboxSyncImage.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /utilities/dropbox/sync_image
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') File Path
+									div.col-sm-10
+										input.form-control.path(type='text', placeholder='File Path')
+										p.help-block 
+											span.label.label-warning path
+											|   ที่อยู่ไฟล์รูป
+								div.form-group
+									label.col-sm-2.control-label(for='input') Search Query
+									div.col-sm-10
+										input.form-control.query(type='text', placeholder='Search Query')
+										p.help-block 
+											span.label.label-warning query
+											|   ชื่อรูปที่ต้องการค้นหา
+								div.form-group
+									label.col-sm-2.control-label(for='input') Image Type
+									div.col-sm-10
+										input.form-control.type(type='text', placeholder='Image Type')
+										p.help-block 
+											span.label.label-warning type
+											|   ประเภทของรูป เช่น 1N, 5S
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseDropboxGetPublicPath', aria-expanded='false')
+						strong Get Share Image Files in Dropbox Folder 
+						&#58; แชร์ภาพใน Dropbox
+			div#collapseDropboxGetPublicPath.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /utilities/dropbox/get_public_path
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
+
+
+		div.panel.panel-default
+			div#headingOne.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapseDatabaseAddIp', aria-expanded='false')
+						strong Add IP Address for Windows Azure Databade Firewall  
+						&#58; เพิ่ม IP Address ให้สามารถใช้งานฐานข้อมูลได้
+			div#collapseDatabaseAddIp.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /utilities/database/add_ip
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') System Name
+									div.col-sm-10
+										input.form-control.system(type='text', placeholder='System Name')
+										p.help-block 
+											span.label.label-warning system
+											|   ชื่อระบบ (ต้องได้รับอนุญาตจากระบบ)
+								div.form-group
+									label.col-sm-2.control-label(for='input') IP Address
+									div.col-sm-10
+										input.form-control.ip(type='text', placeholder='IP Address')
+										p.help-block 
+											span.label.label-default ip
+											|   หมายเลข IP Address ที่อนุญาต
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')

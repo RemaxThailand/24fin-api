@@ -1,0 +1,39 @@
+extends layout
+
+block content
+	div.page-header
+		h2 #{title} 
+			small การทำงานเบื้องหลัง
+
+	div#accordion.panel-group(role='tablist', aria-multiselectable='true')
+		div.panel.panel-default
+			div.panel-heading(role='tab')
+				h4.panel-title
+					a(data-toggle='collapse', data-parent='#accordion', href='#collapse1', aria-expanded='false')
+						strong Telnet 
+						&#58; ตรวจสอบสถานะของ Server
+
+			div#collapse1.panel-collapse.collapse(role='tabpanel')
+				div.panel-body
+					pre URL : /cron/telnet
+					div.panel.panel-default
+						div.panel-body
+							form.form-horizontal
+								div.form-group
+									label.col-sm-2.control-label(for='input') Server
+									div.col-sm-10
+										input.form-control.server(type='text', placeholder='Server')
+										p.help-block 
+											span.label.label-warning server
+											&nbsp;Server ที่ต้องการติดต่อ
+								div.form-group
+									label.col-sm-2.control-label(for='input') Port
+									div.col-sm-10
+										input.form-control.port(type='text', placeholder='Port')
+										p.help-block
+											span.label.label-warning port
+											&nbsp;Port ที่ใช้
+								div.form-group.margin-bottom-0
+									div.col-sm-offset-2.col-sm-10
+										div.btn.btn-primary.btn-submit(data-loading-text='Loading...', autocomplete='off') Submit
+					div.result.hidden.alert.alert-info.margin-top-10.margin-bottom-0.font-pre(role='alert')
