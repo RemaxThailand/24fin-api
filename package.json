@@ -3,7 +3,20 @@
   "version": "1.0.0",
   "description": "24FIN API",
   "main": "app.js",
-  "dependencies": {},
+  "dependencies": {
+    "MD5": "^1.3.0",
+    "azure-storage": "^0.8.0",
+    "crypto": "0.0.3",
+    "email-verify": "0.0.17",
+    "express": "^4.13.4",
+    "jade": "^1.11.0",
+    "moment": "^2.11.2",
+    "mssql": "^3.0.1",
+    "nodemailer": "^2.1.0",
+    "pdfkit": "^0.7.2",
+    "request": "^2.69.0",
+    "rescode": "^0.1.10"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
